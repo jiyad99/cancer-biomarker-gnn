@@ -1,0 +1,20 @@
+phase: "Phase C1 \u2014 CPTAC Acquisition & Alignment"
+timestamp: '2026-07-23T10:40:31.397088'
+cohort_histology_check:
+  primary_diagnosis: Renal cell carcinoma, NOS (100%)
+  morphology_icdo: 8312/3 (100%)
+  filtering_needed: false
+n_patients_clinical_source: 261
+n_patients_clean: 202
+n_patients_aligned_to_rna: 199
+n_events: 35
+n_censored: 167
+os_months_filled_from_gdc_days: 173
+n_with_age: 202
+n_with_stage: 199
+n_with_grade: 199
+multi_tumor_sample_patients: 0
+outputs:
+  clinical_clean: C:\Users\jiyad\Desktop\PROJECT\KIRC\script\KIRC\data\cptac_processed\cptac_clinical_clean.csv
+  sample_alignment: C:\Users\jiyad\Desktop\PROJECT\KIRC\script\KIRC\data\cptac_processed\cptac_sample_alignment.csv
+status: COMPLETE

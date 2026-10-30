@@ -1,0 +1,35 @@
+phase: "Phase 8 \u2014 Pathway Analysis"
+timestamp: '2026-07-13T22:32:41.484996'
+method:
+  embedding_source: GATv4 h_gene (post-GAT2 + residual), 15 fold checkpoints
+  pathway_score: L2 norm of scatter_mean(h_gene[pathway_nodes])
+  aggregation: Mean across 3 seed appearances per patient
+  ranking_criterion: IQR x Delta (pathway score IQR x |high_risk_mean - low_risk_mean|)
+  cox_penalizer: 0.1
+  correction: BH FDR
+results:
+  n_pathways_tested: 50
+  n_significant_q05: 31
+  target_gate: '>= 5 pathways at BH q<0.05'
+  gate_passed: true
+  top_k_selected: 20
+  top_pathway_ids:
+  - R-HSA-1655829
+  - R-HSA-2990846
+  - R-HSA-71403
+  - R-HSA-9825892
+  - R-HSA-8878159
+  top_pathway_names:
+  - Regulation of cholesterol biosynthesis by SREBP (SREBF)
+  - SUMOylation
+  - Citric acid cycle (TCA cycle)
+  - Regulation of MITF-M-dependent genes involved in cell cycle and proliferation
+  - Transcriptional regulation by RUNX3
+  top_hr_range:
+  - 0.682
+  - 1.388
+output_checksums:
+  pathway_cox_results.csv: 995194a148e82c93e4329180dbbd68d8
+  patient_risk_scores.csv: 79a1909779ceca7a0364028a8164c24e
+next_phase: "Phase 9 \u2014 Biomarker Discovery (Integrated Gradients)"
+status: COMPLETE

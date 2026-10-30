@@ -1,0 +1,54 @@
+phase: "Phase 7C \u2014 State-of-the-Art Model Comparison"
+timestamp: '2026-09-18T13:52:06.553134'
+in_pipeline_models_trained:
+  DeepSurv:
+    mean_cindex: 0.7577666666666666
+    mean_ibs: 0.16635333333333333
+    mean_iauc: 0.7724533333333332
+  GCN-surv:
+    mean_cindex: 0.76096
+    mean_ibs: 0.16670666666666667
+    mean_iauc: 0.7780133333333334
+  GraphSAGE-surv:
+    mean_cindex: 0.7605666666666665
+    mean_ibs: 0.16365999999999997
+    mean_iauc: 0.7825799999999999
+full_comparison_ladder:
+- method: GATv4 (proposed)
+  category: GATv4 (this study, same 15 folds)
+  mean_cindex: 0.7697
+  std_cindex: 0.0458
+  mean_ibs: 0.1615
+  mean_iauc: 0.7913
+  frac_logrank_significant: 1.0
+- method: GCN-surv
+  category: Deep learning (this study, same 15 folds)
+  mean_cindex: 0.761
+  std_cindex: 0.0518
+  mean_ibs: 0.1667
+  mean_iauc: 0.778
+  frac_logrank_significant: 1.0
+- method: GraphSAGE-surv
+  category: Deep learning (this study, same 15 folds)
+  mean_cindex: 0.7606
+  std_cindex: 0.0549
+  mean_ibs: 0.1637
+  mean_iauc: 0.7826
+  frac_logrank_significant: 1.0
+- method: DeepSurv
+  category: Deep learning (this study, same 15 folds)
+  mean_cindex: 0.7578
+  std_cindex: 0.056
+  mean_ibs: 0.1664
+  mean_iauc: 0.7725
+  frac_logrank_significant: 0.933
+literature_context_caveat: Literature numbers (GNN-surv, CRESCENT, FGCNSurv, GGNN)
+  are reported by original authors on their own cohorts/preprocessing -- NOT re-run
+  on this pipeline's folds. They provide field context only; the in-pipeline ladder
+  is the controlled comparison.
+literature_sources:
+- Kim, S.Y. (2023). GNN-surv. Bioengineering 10(9):1046.
+- Cai, H. et al. (2024). CRESCENT. IEEE JBHI 28(2):1134-1143.
+- Yang, Z. et al. (2023). FGCNSurv. Bioinformatics 39(8):btad472.
+next_phase: "Phase 8 \u2014 Pathway Analysis + Biomarker Discovery"
+status: COMPLETE
