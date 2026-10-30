@@ -1,0 +1,17 @@
+phase: "Phase C2 \u2014 CPTAC RNA (VST) & CNV Processing"
+timestamp: '2026-07-23T10:56:55.346143'
+rna:
+  n_tumor_samples: 199
+  n_normal_samples_used_for_vst_fit: 151
+  vst_method: PyDESeq2 dds.vst(use_design=False), blind, joint tumor+normal fit
+  ppi_genes_found_pct: 95.3
+  output: C:\Users\jiyad\Desktop\PROJECT\KIRC\script\KIRC\data\cptac_processed\cptac_vst_matrix.csv
+cnv:
+  source: cBioPortal data_cna.txt (rcc_cptac_gdc)
+  convention: "GISTIC2 discrete (-2..2), neutral=0 \u2014 SAME as TCGA, no shift needed"
+  entrez_mapped_pct: 99.9
+  ppi_genes_found_pct: 96.1
+  output: C:\Users\jiyad\Desktop\PROJECT\KIRC\script\KIRC\data\cptac_processed\cptac_cnv_raw.csv
+important_note_for_phase9: Set CPTAC_CNV_NEUTRAL_VALUE = 0 in Phase 9 (not 2.0) since
+  this CNV source is already GISTIC2-style centered at 0.
+status: COMPLETE
